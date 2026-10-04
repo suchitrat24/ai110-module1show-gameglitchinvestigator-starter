@@ -21,7 +21,7 @@ def check_guess(guess, secret):
     if guess == secret:
         return "Win", "🎉 Correct!"
 
-    # FIXME: Logic breaks here - hint messages were swapped ("Too High" said
+    # FIXME: Logic breaks here - Hint messages were swapped ("Too High" said
     # "Go HIGHER!"), and a TypeError fallback compared numbers as strings.
     # Fixed: a guess above the secret now says to go lower, and vice versa.
     # Collaboration: I asked the AI to find bugs; it spotted the swapped hints.

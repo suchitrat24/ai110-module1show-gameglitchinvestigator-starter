@@ -1,5 +1,6 @@
 import random
 import streamlit as st
+
 from logic_utils import check_guess
 
 def get_range_for_difficulty(difficulty: str):
