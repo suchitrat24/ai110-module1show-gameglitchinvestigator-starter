@@ -18,7 +18,17 @@ def check_guess(guess, secret):
 
     outcome examples: "Win", "Too High", "Too Low"
     """
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+    if guess == secret:
+        return "Win", "🎉 Correct!"
+
+    # FIXME: Logic breaks here - hint messages were swapped ("Too High" said
+    # "Go HIGHER!"), and a TypeError fallback compared numbers as strings.
+    # Fixed: a guess above the secret now says to go lower, and vice versa.
+    # Collaboration: I asked the AI to find bugs; it spotted the swapped hints.
+    # I had it fix them, mark this spot, and move check_guess here from app.py.
+    if guess > secret:
+        return "Too High", "📉 Go LOWER!"
+    return "Too Low", "📈 Go HIGHER!"
 
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
